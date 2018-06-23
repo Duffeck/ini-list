@@ -17,18 +17,22 @@
       </button>
     </ion-buttons>
   </ion-navbar>
+  <ion-toolbar color="primary">
+   <ion-title>Rounds: {{rounds}} / {{calculaTempo()}} </ion-title>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let personagem of personagens | keyPipe" [class.ativo]="testaAtivo(personagem.key)">
+    <!--<ion-item *ngFor="let personagem of personagens" [class.ativo]="testaAtivo(personagem)" [class.repetido]="testaRepetido(personagem)" (click)="editarPersonagem(personagem)">-->
+      <ion-item *ngFor="let personagem of personagens" [ngClass]="testaAtivo(personagem.id)?'ativo': (testaRepetido(personagem)? 'repetido' : '')" (click)="editarPersonagem(personagem)">
       <div item-content>
-        {{personagem.value.iniciativa}}
+        {{personagem.iniciativa}}{{personagem.desempate? ' / '+personagem.desempate : ''}}
       </div>
       <ion-label item-end>
-        {{personagem.value.nome}}
+        {{personagem.nome}}
       </ion-label>
     </ion-item>
   </ion-list>

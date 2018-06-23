@@ -1,6 +1,11 @@
 page-lista-iniciativa {
 	.ativo {
-		 background-color: #000000;
+		 background-color: #222;
+		 color: #ffffff;
+	}
+
+	.repetido {
+		 background-color: red;
 		 color: #ffffff;
 	}
 }

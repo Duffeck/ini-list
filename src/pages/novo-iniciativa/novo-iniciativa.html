@@ -26,6 +26,10 @@
 			<ion-label floating>Iniciativa</ion-label>
 			<ion-input type="number" formControlName="iniciativa" value="" [(ngModel)]="personagemForm.iniciativa" pattern="[0-9]*"></ion-input>
 		</ion-item>
+		<ion-item>
+			<ion-label floating>Desempate</ion-label>
+			<ion-input type="number" formControlName="desempate" value="" [(ngModel)]="personagemForm.desempate" pattern="[0-9]*"></ion-input>
+		</ion-item>
 		<button class="button" color="primary" [disabled]="!formNovoPersonagem.valid" ion-item (click)="salvarPersonagem(personagemForm)">
 			Salvar
 		</button>
