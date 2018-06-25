@@ -41,29 +41,21 @@ import { NovoIniciativaPage } from '../novo-iniciativa/novo-iniciativa';
  		this.personagemService.ordenarLista();
  	}
  	
- 	testaAtivo(idAtivo:number){
- 		console.log('teste');
- 		if(this.personagemAtivo != undefined){
- 			return (idAtivo == this.personagemAtivo.id);
- 		}
- 		return false;
- 	}
-
  	testaRepetido(personagem: Personagem){
- 		console.log('testou');
+ 		/*console.log('testou');
  		for(var i = 0; i < this.personagens.length; i++){
  			if(personagem.id != this.personagens[i].id){
  				if(personagem.iniciativa == this.personagens[i].iniciativa){
  					if(personagem.desempate == this.personagens[i].desempate)
- 					return true;
+ 						return true;
  				}
  			}
  		};
- 		return false;
+ 		return false;*/
  	}
 
  	proximo(){
- 		if(this.personagemAtivo!=undefined){
+ 		/*if(this.personagemAtivo!=undefined){
  			var index = this.personagens.indexOf(this.personagemAtivo);
  			if(index < this.personagens.length-1){
  				this.personagemAtivo = this.personagens[index+1];
@@ -73,7 +65,19 @@ import { NovoIniciativaPage } from '../novo-iniciativa/novo-iniciativa';
  			this.rounds+=1;
  		}else{
  			this.personagemAtivo = this.personagens[0];
+ 		}*/
+ 		this.rounds+=1;
+ 		for(var i = 0; i < this.personagens.length; i++){
+ 			if(this.personagens[i].ativo){
+ 				this.personagens[i].ativo = false;
+ 				if( i < this.personagens.length-1){
+ 					this.personagens[i+1].ativo = true;
+ 					return true;
+ 				}
+ 			}
  		}
+ 		this.personagens[0].ativo = true;
+ 		return true;
  	}
 
  	calculaTempo(){
