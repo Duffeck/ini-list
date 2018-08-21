@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListaIniciativaPage } from '../pages/lista-iniciativa/lista-iniciativa';
+import { ListaPersonagensPage } from '../pages/lista-personagens/lista-personagens';
 import { NovoIniciativaPage } from '../pages/novo-iniciativa/novo-iniciativa';
 import { PersonagemProvider } from '../providers/personagem/personagem';
 import { KeysPipe } from '../pipes/key/key';
@@ -17,6 +18,7 @@ import { KeysPipe } from '../pipes/key/key';
     MyApp,
     HomePage,
     ListaIniciativaPage,
+    ListaPersonagensPage,
     NovoIniciativaPage,
     KeysPipe
   ],
@@ -30,6 +32,7 @@ import { KeysPipe } from '../pipes/key/key';
     MyApp,
     HomePage,
     ListaIniciativaPage,
+    ListaPersonagensPage,
     NovoIniciativaPage
   ],
   providers: [

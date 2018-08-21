@@ -18,10 +18,7 @@ import { NovoIniciativaPage } from '../novo-iniciativa/novo-iniciativa';
  })
  export class ListaIniciativaPage {
  	public personagens: Array<Personagem>;
- 	//public ativoKey:number = -1;
- 	public personagemAtivo:Personagem;
  	public rounds:number = 0;
- 	//public tempo: string = "0 segundos";
  	public tempoRound:number = 6;
 
  	constructor(public navCtrl: NavController, public navParams: NavParams, public personagemService: PersonagemProvider) {
@@ -42,7 +39,6 @@ import { NovoIniciativaPage } from '../novo-iniciativa/novo-iniciativa';
  	}
  	
  	testaRepetido(personagem: Personagem){
- 		/*console.log('testou');
  		for(var i = 0; i < this.personagens.length; i++){
  			if(personagem.id != this.personagens[i].id){
  				if(personagem.iniciativa == this.personagens[i].iniciativa){
@@ -51,21 +47,10 @@ import { NovoIniciativaPage } from '../novo-iniciativa/novo-iniciativa';
  				}
  			}
  		};
- 		return false;*/
+ 		return false;
  	}
 
  	proximo(){
- 		/*if(this.personagemAtivo!=undefined){
- 			var index = this.personagens.indexOf(this.personagemAtivo);
- 			if(index < this.personagens.length-1){
- 				this.personagemAtivo = this.personagens[index+1];
- 			}else{
- 				this.personagemAtivo = this.personagens[0];	
- 			}
- 			this.rounds+=1;
- 		}else{
- 			this.personagemAtivo = this.personagens[0];
- 		}*/
  		this.rounds+=1;
  		for(var i = 0; i < this.personagens.length; i++){
  			if(this.personagens[i].ativo){

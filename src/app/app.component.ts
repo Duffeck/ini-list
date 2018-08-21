@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MenuController } from 'ionic-angular';
 
 import { ListaIniciativaPage } from '../pages/lista-iniciativa/lista-iniciativa'
+import { ListaPersonagensPage } from '../pages/lista-personagens/lista-personagens'
 
 
 import { HomePage } from '../pages/home/home';
@@ -18,6 +19,7 @@ export class MyApp {
    this.pages = [
       {component: HomePage, title: 'Home', icon: 'home'},
       {component: ListaIniciativaPage, title: 'Lista', icon: 'list'},
+      {component: ListaPersonagensPage, title: 'Personagens', icon: 'list'},
     ];
 
     platform.ready().then(() => {
